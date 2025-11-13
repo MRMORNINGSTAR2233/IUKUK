@@ -2,14 +2,14 @@
 Speculative Decoding Benchmark
 
 This script benchmarks standard vs. speculative decoding, optimized
-for a high-VRAM NVIDIA GPU (e.g., 48GB A6000).
+for a high-VRAM NVIDIA GPU (A100 80GB).
 
 This is the "winning" setup:
-1.  Target Model: Gemma 2 27B-Instruct (4-bit) -> This creates a MEMORY-BOUND system.
-2.  Draft Model: Gemma 2 2B-Instruct (float16) -> This is a matched, bug-free draft.
-3.  Attention: Uses Flash Attention 2 (or SDPA).
+1.  Target Model: Gemma 2 27B-Instruct (8-bit) -> Creates MEMORY-BOUND system.
+2.  Draft Model: Gemma 2 2B-Instruct (float16) -> Matched, bug-free draft.
+3.  Attention: Uses Flash Attention 2 for maximum speed.
 4.  Tokenizer: Uses the "single tokenizer" trick to bypass library bugs.
-5.  std::bad_alloc Fix: Uses `low_cpu_mem_usage=True` to prevent system RAM crashes.
+5.  std::bad_alloc Fix: Uses `low_cpu_mem_usage=True` for BOTH models.
 """
 
 import torch
@@ -20,8 +20,11 @@ from typing import List, Dict
 
 # --- Configuration ---
 
-# WARNING: This is a security risk. Do not share this code publicly.
-# It is safer to use `huggingface-cli login` in your terminal.
+import os
+
+# Load HuggingFace token from environment variable
+# Set it before running: export HF_TOKEN="your_token_here"
+# Or use: huggingface-cli login
 HF_TOKEN = os.getenv("HF_TOKEN", None)
 
 # Step 2: Model Selection (The "Memory-Bound" Pair)
@@ -67,12 +70,10 @@ class SpeculativeDecoderKV:
         self.device = "cuda"
         print(f"Using device: {self.device}")
         
-        # 4-bit quantization config (FOR TARGET MODEL ONLY)
+        # 8-bit quantization config (FOR TARGET MODEL ONLY)
+        # This is safer than 4-bit and avoids the `AttributeError`
         bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16,
-            bnb_4bit_use_double_quant=True,
+            load_in_8bit=True,
         )
 
         self.dtype = torch.float16
@@ -88,29 +89,27 @@ class SpeculativeDecoderKV:
 
 
         # Load Draft Model (in float16, NO quantization)
-        # This prevents the `AttributeError` bug
         print(f"Loading draft model: {draft_model_name} (in float16)")
         self.draft_model = AutoModelForCausalLM.from_pretrained(
             draft_model_name,
-            dtype=self.dtype,  # FIXED: Changed from torch_dtype
+            torch_dtype=self.dtype,
             attn_implementation=attn_implementation,
-            device_map=self.device,
+            device_map=self.device, # Automatically maps to CUDA
             trust_remote_code=True,
-            token=HF_TOKEN,
-            low_cpu_mem_usage=True  # FIXED: Added to prevent std::bad_alloc
+            token=HF_TOKEN,  # <-- Pass token
+            low_cpu_mem_usage=True # <-- THE FIX for std::bad_alloc
         )
 
-        # Load Target Model (with 4-bit quantization)
-        print(f"Loading target model: {target_model_name} (in 4-bit)")
+        # Load Target Model (with 8-bit quantization)
+        print(f"Loading target model: {target_model_name} (in 8-bit)")
         self.target_model = AutoModelForCausalLM.from_pretrained(
             target_model_name,
-            dtype=self.dtype,  # FIXED: Changed from torch_dtype
-            quantization_config=bnb_config,
+            quantization_config=bnb_config, # <-- 8-bit
             attn_implementation=attn_implementation,
-            device_map=self.device,
+            device_map=self.device, # Automatically maps to CUDA
             trust_remote_code=True,
-            token=HF_TOKEN,
-            low_cpu_mem_usage=True  # FIXED: Already present, keeping it
+            token=HF_TOKEN,  # <-- Pass token
+            low_cpu_mem_usage=True # <-- THE FIX for std::bad_alloc
         )
         
         self.target_model.generation_config.do_sample = True
@@ -121,7 +120,7 @@ class SpeculativeDecoderKV:
         self.tokenizer = AutoTokenizer.from_pretrained(
             target_model_name, 
             trust_remote_code=True,
-            token=HF_TOKEN
+            token=HF_TOKEN  # <-- Pass token
         )
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
@@ -245,7 +244,8 @@ def run_benchmark_challenge():
         dataset = load_dataset(
             DATASET_NAME,
             name=DATASET_CONFIG,
-            split=DATASET_SPLIT
+            split=DATASET_SPLIT,
+            token=HF_TOKEN # <-- Pass token
         )
         # Filter out potential None entries
         prompts = [p for p in dataset[DATASET_PROMPT_KEY] if p is not None]
@@ -344,7 +344,7 @@ def run_benchmark_challenge():
     best_speedup = 0
     
     for res in results:
-        print(f"{res['K']:<15} | {res['Time (Y)']:<12.2f} | {res['Tokens/Sec']:<12.2f} | {res['Speedup']:<8.2f}x")
+        print(f"{'K (Draft Len)':<15} | {res['Time (Y)']:<12.2f} | {res['Tokens/Sec']:<12.2f} | {res['Speedup']:<8.2f}x")
         if res['Speedup'] > best_speedup:
             best_speedup = res['Speedup']
             best_k = res['K']
