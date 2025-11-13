@@ -1,0 +1,17 @@
+Hardware Device,Model (Target),Model (Draft),Dataset,Num Samples,Tokens per Prompt
+CUDA (Tesla T4),Qwen/Qwen3-4B-Instruct-2507,Qwen/Qwen3-1.7B,ai4bharat/IN22-Conv,50,50
+
+Type,Time (s),Tokens/Sec,Speedup (x)
+Baseline (X),152.26,16.42,1.00
+
+K (Draft Len),Total Time (s),Tokens/Sec,Speedup (x)
+1,401.54,6.23,0.38
+2,440.50,5.68,0.35
+3,380.87,6.56,0.40
+4,387.65,6.45,0.39
+5,444.89,5.62,0.34
+6,400.65,6.24,0.38
+
+Result,Observation
+-,No speedup achieved. The overhead was greater than the gain.
+
