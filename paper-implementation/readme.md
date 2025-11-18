@@ -197,18 +197,15 @@ A complete list of foundational and advanced deep learning theory papers to impl
 
 ## 🔧 Optimization, Regularization & Initialization
 
+### 1992
+- [ ] **Weight Decay, Regularization & Generalization** — Early foundational theory (1992)  
+      https://link.springer.com/chapter/10.1007/3-540-55719-9_3
+
+### 1998
 - [ ] **Efficient BackProp** — LeCun et al., 1998  
       http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf
 
-- [ ] **Dropout: A Simple Way to Prevent Neural Networks from Overfitting** — Srivastava et al., 2014  
-      https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf
-
-- [ ] **Batch Normalization: Accelerating Deep Network Training** — Ioffe & Szegedy, 2015  
-      https://arxiv.org/abs/1502.03167
-
-- [ ] **Adam: A Method for Stochastic Optimization** — Kingma & Ba, 2015  
-      https://arxiv.org/abs/1412.6980
-
+### 2010
 - [ ] **Understanding the Difficulty of Training Deep Feedforward Neural Networks (Xavier Init)**  
       Glorot & Bengio, 2010  
       http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf
@@ -217,15 +214,25 @@ A complete list of foundational and advanced deep learning theory papers to impl
       Krizhevsky, Sutskever & Hinton, 2010  
       https://papers.nips.cc/paper/2010/file/1fb3ac3a8b0d0c3b2c3c4b4b0f1b8b22-Paper.pdf
 
+### 2014
+- [ ] **Dropout: A Simple Way to Prevent Neural Networks from Overfitting** — Srivastava et al., 2014  
+      https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf
+
+### 2015
+- [ ] **Batch Normalization: Accelerating Deep Network Training** — Ioffe & Szegedy, 2015  
+      https://arxiv.org/abs/1502.03167
+
+- [ ] **Adam: A Method for Stochastic Optimization** — Kingma & Ba, 2015  
+      https://arxiv.org/abs/1412.6980
+
+### 2016
 - [ ] **Layer Normalization** — Ba et al., 2016  
       https://arxiv.org/abs/1607.06450
-
-- [ ] **Weight Decay, Regularization & Generalization** — Early foundational theory (1992)  
-      https://link.springer.com/chapter/10.1007/3-540-55719-9_3
 
 - [ ] **Stochastic Depth / DropPath** — Huang et al., 2016  
       https://arxiv.org/abs/1603.09382
 
+### 2017
 - [ ] **Large-Batch Training of Convolutional Networks (Linear Scaling Rule)** — Goyal et al., 2017  
       https://arxiv.org/abs/1706.02677
 
@@ -233,15 +240,19 @@ A complete list of foundational and advanced deep learning theory papers to impl
 
 ## 🧱 Neural Network Architectures
 
+### 2013
 - [ ] **Network in Network** — Lin et al., 2013  
       https://arxiv.org/abs/1312.4400
 
-- [ ] **Squeeze-and-Excitation Networks (SE-Net)** — Hu et al., 2017  
-      https://arxiv.org/abs/1709.01507
-
+### 2015
 - [ ] **ResNet: Deep Residual Learning for Image Recognition** — He et al., 2015  
       https://arxiv.org/abs/1512.03385
 
+### 2017
+- [ ] **Squeeze-and-Excitation Networks (SE-Net)** — Hu et al., 2017  
+      https://arxiv.org/abs/1709.01507
+
+### 2019
 - [ ] **EfficientNet: Rethinking Model Scaling** — Tan & Le, 2019  
       https://arxiv.org/abs/1905.11946
 
@@ -249,9 +260,11 @@ A complete list of foundational and advanced deep learning theory papers to impl
 
 ## 🧠 Transformers & Beyond
 
+### 2017
 - [ ] **Attention Is All You Need** — Vaswani et al., 2017  
       https://arxiv.org/abs/1706.03762
 
+### 2020
 - [ ] **Vision Transformer (ViT)** — Dosovitskiy et al., 2020  
       https://arxiv.org/abs/2010.11929
 
@@ -259,17 +272,20 @@ A complete list of foundational and advanced deep learning theory papers to impl
 
 ## 🔍 Self-Supervised Learning Foundations
 
+### 2016
+- [ ] **Understanding Deep Learning Generalization** — Zhang, Neyshabur, etc. (2016)  
+      https://arxiv.org/abs/1611.03530
+
+### 2020
 - [ ] **SimCLR** — Chen et al., 2020  
       https://arxiv.org/abs/2002.05709
 
 - [ ] **BYOL (Bootstrap Your Own Latent)** — Grill et al., 2020  
       https://arxiv.org/abs/2006.07733
 
+### 2021
 - [ ] **DINO: Self-Distillation With No Labels** — Caron et al., 2021  
       https://arxiv.org/abs/2104.14294
-
-- [ ] **Understanding Deep Learning Generalization** — Zhang, Neyshabur, etc. (2016–2019)  
-      https://arxiv.org/abs/1611.03530
 
 ---
 
@@ -287,6 +303,7 @@ This file contains the complete list of NLP research papers you shared — all i
 
 ## 🔤 Word Embeddings & Early Neural NLP
 
+### 2013
 - [ ] **word2vec — Efficient Estimation of Word Representations in Vector Space**  
       Mikolov et al., 2013  
       https://arxiv.org/abs/1310.4546
@@ -295,14 +312,17 @@ This file contains the complete list of NLP research papers you shared — all i
 
 ## 🔁 Sequence Models, Neural Machine Translation & Attention
 
+### 2014
 - [ ] **Sequence-to-Sequence Learning with Neural Networks**  
       Sutskever et al., 2014  
       https://arxiv.org/abs/1409.3215
 
+### 2015
 - [ ] **Neural Machine Translation by Jointly Learning to Align and Translate (Bahdanau Attention)**  
       Bahdanau et al., 2015  
       https://arxiv.org/abs/1409.0473
 
+### 2017
 - [ ] **Attention Is All You Need (Transformer)**  
       Vaswani et al., 2017  
       https://arxiv.org/abs/1706.03762
@@ -311,46 +331,51 @@ This file contains the complete list of NLP research papers you shared — all i
 
 ## 🧠 Contextual Representations & Transfer Learning
 
-- [ ] **ELMo — Deep Contextualized Word Representations**  
-      Peters et al., 2018  
-      https://arxiv.org/abs/1802.05365
-
+### 2018
 - [ ] **ULMFiT — Universal Language Model Fine-Tuning for Text Classification**  
       Howard & Ruder, 2018  
       https://arxiv.org/abs/1801.06146
+
+- [ ] **ELMo — Deep Contextualized Word Representations**  
+      Peters et al., 2018  
+      https://arxiv.org/abs/1802.05365
 
 ---
 
 ## 🧩 Transformer Encoder Architectures
 
+### 2018
 - [ ] **BERT — Pre-training of Deep Bidirectional Transformers for Language Understanding**  
       Devlin et al., 2018  
       https://arxiv.org/abs/1810.04805
+
+### 2019
+- [ ] **XLNet — Generalized Autoregressive Pretraining**  
+      Yang et al., 2019  
+      https://arxiv.org/abs/1906.08237
 
 - [ ] **RoBERTa — A Robustly Optimized BERT Pretraining Approach**  
       Liu et al., 2019  
       https://arxiv.org/abs/1907.11692
 
-- [ ] **XLNet — Generalized Autoregressive Pretraining**  
-      Yang et al., 2019  
-      https://arxiv.org/abs/1906.08237
+- [ ] **SpanBERT — Improving Pre-training by Representing and Predicting Spans**  
+      Joshi et al., 2019  
+      https://arxiv.org/abs/1907.10529
 
 - [ ] **ALBERT — A Lite BERT**  
       Lan et al., 2019  
       https://arxiv.org/abs/1909.11942
 
-- [ ] **SpanBERT — Improving Pre-training by Representing and Predicting Spans**  
-      Joshi et al., 2020  
-      https://arxiv.org/abs/1907.10529
-
-- [ ] **DeBERTa — Decoding-Enhanced BERT with Disentangled Attention**  
-      He et al., 2021  
-      https://arxiv.org/abs/2006.03654
-
+### 2020
 - [ ] **Longformer — The Long Document Transformer**  
       Beltagy et al., 2020  
       https://arxiv.org/abs/2004.05150
 
+- [ ] **DeBERTa — Decoding-Enhanced BERT with Disentangled Attention**  
+      He et al., 2020  
+      https://arxiv.org/abs/2006.03654
+
+### 2021
 - [ ] **Switch Transformers — Scaling to Trillion Parameter Models**  
       Fedus et al., 2021  
       https://arxiv.org/abs/2101.03961
@@ -359,10 +384,12 @@ This file contains the complete list of NLP research papers you shared — all i
 
 ## 📝 Sequence-to-Sequence, Summarization & Retrieval
 
+### 2019
 - [ ] **BART — Denoising Sequence-to-Sequence Pre-training**  
       Lewis et al., 2019  
       https://arxiv.org/abs/1910.13461
 
+### 2020
 - [ ] **T5 — Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer**  
       Raffel et al., 2020  
       https://arxiv.org/abs/1910.10683
@@ -379,6 +406,7 @@ This file contains the complete list of NLP research papers you shared — all i
 
 ## ⚡ Efficient Transformer Training & Alternative Objectives
 
+### 2020
 - [ ] **ELECTRA — Pre-training Encoders as Discriminators Rather Than Generators**  
       Clark et al., 2020  
       https://arxiv.org/abs/2003.10555
@@ -387,10 +415,12 @@ This file contains the complete list of NLP research papers you shared — all i
 
 ## 🤖 Generative Transformer Language Models (Pre-GPT-3 Era)
 
+### 2018
 - [ ] **Improving Language Understanding by Generative Pre-Training (GPT)**  
       Radford et al., 2018  
       https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
 
+### 2019
 - [ ] **Language Models Are Unsupervised Multitask Learners (GPT-2)**  
       Radford et al., 2019  
       https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
@@ -431,70 +461,103 @@ This file includes **every CV research paper** you listed earlier — CNNs, obje
 
 ## 🏛 Classical CNN Architectures
 
-- [ ] **LeNet-5 (1998)** — *Gradient-Based Learning Applied to Document Recognition*  
+### 1998
+- [ ] **LeNet-5** — *Gradient-Based Learning Applied to Document Recognition*  
+      LeCun et al., 1998  
       https://ieeexplore.ieee.org/document/726791  
       PDF mirror: https://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf
 
-- [ ] **AlexNet (2012)** — *ImageNet Classification with Deep CNNs*  
+### 2012
+- [ ] **AlexNet** — *ImageNet Classification with Deep CNNs*  
+      Krizhevsky et al., 2012  
       https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks
 
-- [ ] **VGG16 / VGG19 (2014)** — *Very Deep Convolutional Networks*  
+### 2014
+- [ ] **VGG16 / VGG19** — *Very Deep Convolutional Networks*  
+      Simonyan & Zisserman, 2014  
       https://arxiv.org/abs/1409.1556
 
-- [ ] **Inception-v1 / GoogLeNet (2015)** — *Going Deeper with Convolutions*  
+### 2015
+- [ ] **Inception-v1 / GoogLeNet** — *Going Deeper with Convolutions*  
+      Szegedy et al., 2015  
       https://arxiv.org/abs/1409.4842
 
-- [ ] **ResNet (2015)** — *Deep Residual Learning for Image Recognition*  
+- [ ] **ResNet** — *Deep Residual Learning for Image Recognition*  
+      He et al., 2015  
       https://arxiv.org/abs/1512.03385
 
-- [ ] **DenseNet (2017)** — *Densely Connected Convolutional Networks*  
+### 2017
+- [ ] **DenseNet** — *Densely Connected Convolutional Networks*  
+      Huang et al., 2017  
       https://arxiv.org/abs/1608.06993
 
-- [ ] **EfficientNet (2019)** — *Rethinking Model Scaling*  
+### 2019
+- [ ] **EfficientNet** — *Rethinking Model Scaling*  
+      Tan & Le, 2019  
       https://arxiv.org/abs/1905.11946
 
 ---
 
 ## 🎯 Object Detection
 
-- [ ] **Faster R-CNN (2015)** — *Towards Real-Time Object Detection with RPN*  
+### 2015
+- [ ] **Faster R-CNN** — *Towards Real-Time Object Detection with RPN*  
+      Ren et al., 2015  
       https://arxiv.org/abs/1506.01497
 
-- [ ] **YOLOv1 (2016)** — *You Only Look Once: Unified, Real-Time Object Detection*  
+### 2016
+- [ ] **YOLOv1** — *You Only Look Once: Unified, Real-Time Object Detection*  
+      Redmon et al., 2016  
       https://arxiv.org/abs/1506.02640
 
-- [ ] **FPN (2017)** — *Feature Pyramid Networks*  
+### 2017
+- [ ] **FPN** — *Feature Pyramid Networks*  
+      Lin et al., 2017  
       https://arxiv.org/abs/1612.03144
 
-- [ ] **Mask R-CNN (2017)** — *Mask R-CNN*  
+- [ ] **Mask R-CNN** — *Mask R-CNN*  
+      He et al., 2017  
       https://arxiv.org/abs/1703.06870
 
-- [ ] **PANet (2018)** — *Path Aggregation Network for Instance Segmentation*  
+### 2018
+- [ ] **PANet** — *Path Aggregation Network for Instance Segmentation*  
+      Liu et al., 2018  
       https://arxiv.org/abs/1803.01534
 
-- [ ] **YOLOv4 (2020)** — *Optimal Speed & Accuracy of Object Detection*  
+### 2020
+- [ ] **YOLOv4** — *Optimal Speed & Accuracy of Object Detection*  
+      Bochkovskiy et al., 2020  
       https://arxiv.org/abs/2004.10934
 
 ---
 
 ## 🧩 Vision Transformers & Beyond
 
-- [ ] **Vision Transformer (ViT) — 2020** — *An Image is Worth 16×16 Words*  
+### 2020
+- [ ] **Vision Transformer (ViT)** — *An Image is Worth 16×16 Words*  
+      Dosovitskiy et al., 2020  
       https://arxiv.org/abs/2010.11929
 
-- [ ] **DETR (2020)** — *End-to-End Object Detection with Transformers*  
+- [ ] **DETR** — *End-to-End Object Detection with Transformers*  
+      Carion et al., 2020  
       https://arxiv.org/abs/2005.12872
 
-- [ ] **Deformable DETR (2020)** — *Deformable Transformers for End-to-End Object Detection*  
+- [ ] **Deformable DETR** — *Deformable Transformers for End-to-End Object Detection*  
+      Zhu et al., 2020  
       https://arxiv.org/abs/2010.04159
 
-- [ ] **Swin Transformer (2021)** — *Hierarchical Vision Transformer Using Shifted Windows*  
+### 2021
+- [ ] **Swin Transformer** — *Hierarchical Vision Transformer Using Shifted Windows*  
+      Liu et al., 2021  
       https://arxiv.org/abs/2103.14030
 
-- [ ] **DINO (2021)** — *Self-Supervised Learning of ViTs by Self-Distillation*  
+- [ ] **DINO** — *Self-Supervised Learning of ViTs by Self-Distillation*  
+      Caron et al., 2021  
       https://arxiv.org/abs/2104.14294
 
-- [ ] **SAM (2023)** — *Segment Anything Model*  
+### 2023
+- [ ] **SAM** — *Segment Anything Model*  
+      Kirillov et al., 2023  
       https://arxiv.org/abs/2304.02643
 
 ---
@@ -534,23 +597,35 @@ This file includes ALL RL papers you listed — from DQN → MuZero → Decision
 
 ## 🎮 Deep Q-Learning & Value-Based Methods
 
+### 2013 / 2015
 - [ ] **DQN — Playing Atari with Deep RL**  
       Mnih et al., 2015  
-      https://arxiv.org/abs/1312.5602 (original NIPS workshop version)
+      https://arxiv.org/abs/1312.5602 (original NIPS workshop version 2013)
 
-- [ ] **Double DQN (DDQN)** — van Hasselt et al., 2016  
+### 2016
+- [ ] **Double DQN (DDQN)**  
+      van Hasselt et al., 2016  
       https://arxiv.org/abs/1509.06461
 
-- [ ] **Dueling DQN** — Wang et al., 2016  
+- [ ] **Dueling DQN**  
+      Wang et al., 2016  
       https://arxiv.org/abs/1511.06581
 
-- [ ] **Rainbow DQN** — Hessel et al., 2018  
+### 2018
+- [ ] **Rainbow DQN**  
+      Hessel et al., 2018  
       https://arxiv.org/abs/1710.02298
 
 ---
 
 ## 🤖 Actor–Critic & Continuous Control
 
+### 2015
+- [ ] **TRPO — Trust Region Policy Optimization**  
+      Schulman et al., 2015  
+      https://arxiv.org/abs/1502.05477
+
+### 2016
 - [ ] **DDPG — Deep Deterministic Policy Gradient**  
       Lillicrap et al., 2016  
       https://arxiv.org/abs/1509.02971
@@ -559,14 +634,12 @@ This file includes ALL RL papers you listed — from DQN → MuZero → Decision
       Mnih et al., 2016  
       https://arxiv.org/abs/1602.01783
 
-- [ ] **TRPO — Trust Region Policy Optimization**  
-      Schulman et al., 2015  
-      https://arxiv.org/abs/1502.05477
-
+### 2017
 - [ ] **PPO — Proximal Policy Optimization**  
       Schulman et al., 2017  
       https://arxiv.org/abs/1707.06347
 
+### 2018
 - [ ] **SAC — Soft Actor-Critic**  
       Haarnoja et al., 2018  
       https://arxiv.org/abs/1801.01290
@@ -579,6 +652,7 @@ This file includes ALL RL papers you listed — from DQN → MuZero → Decision
 
 ## 🧵 Distributed & Large-Scale RL
 
+### 2018
 - [ ] **IMPALA — Scalable Distributed RL**  
       Espeholt et al., 2018  
       https://arxiv.org/abs/1802.01561
@@ -587,6 +661,7 @@ This file includes ALL RL papers you listed — from DQN → MuZero → Decision
 
 ## 🧠 Model-Based RL & Planning
 
+### 2020
 - [ ] **MuZero — Mastering Atari, Go, Chess & Shogi With a Learned Model**  
       Schrittwieser et al., 2020  
       https://arxiv.org/abs/1911.08265
@@ -595,6 +670,7 @@ This file includes ALL RL papers you listed — from DQN → MuZero → Decision
 
 ## 📚 Offline RL
 
+### 2020
 - [ ] **CQL — Conservative Q-Learning**  
       Kumar et al., 2020  
       https://arxiv.org/abs/2006.04779
@@ -603,6 +679,7 @@ This file includes ALL RL papers you listed — from DQN → MuZero → Decision
 
 ## 🧬 Transformer-Based RL
 
+### 2021
 - [ ] **Decision Transformer — RL via Sequence Modeling**  
       Chen et al., 2021  
       https://arxiv.org/abs/2106.01345
@@ -639,6 +716,7 @@ This file contains ALL diffusion model papers you listed — from early Sohl-Dic
 
 ## 🧱 Foundations of Diffusion Models
 
+### 2015
 - [ ] **Deep Unsupervised Learning using Nonequilibrium Thermodynamics**  
       Sohl-Dickstein et al., 2015  
       https://arxiv.org/abs/1503.03585
@@ -647,6 +725,7 @@ This file contains ALL diffusion model papers you listed — from early Sohl-Dic
 
 ## 🌫️ Core Diffusion Model Papers
 
+### 2020
 - [ ] **DDPM — Denoising Diffusion Probabilistic Models**  
       Ho et al., 2020  
       https://arxiv.org/abs/2006.11239
@@ -655,6 +734,7 @@ This file contains ALL diffusion model papers you listed — from early Sohl-Dic
       Song et al., 2020  
       https://arxiv.org/abs/2010.02502
 
+### 2021
 - [ ] **Improved DDPM — Learning Variances, Class-Conditional Modeling**  
       Nichol & Dhariwal, 2021  
       https://arxiv.org/abs/2102.09672
@@ -667,6 +747,7 @@ This file contains ALL diffusion model papers you listed — from early Sohl-Dic
 
 ## 📈 Score-Based Models & SDE Framework
 
+### 2021
 - [ ] **Score-Based Generative Modeling through Stochastic Differential Equations (SDEs)**  
       Song et al., 2021  
       https://arxiv.org/abs/2011.13456
@@ -675,6 +756,7 @@ This file contains ALL diffusion model papers you listed — from early Sohl-Dic
 
 ## 🧭 Conditioning & Guidance Techniques
 
+### 2022
 - [ ] **Classifier-Free Guidance**  
       Ho & Salimans, 2022  
       https://arxiv.org/abs/2207.12598
@@ -683,17 +765,19 @@ This file contains ALL diffusion model papers you listed — from early Sohl-Dic
 
 ## 🖼️ Text-to-Image Diffusion Models
 
+### 2021
 - [ ] **GLIDE — Hierarchical Text-Conditional Image Generation**  
       Nichol et al., 2021  
       https://arxiv.org/abs/2112.10741
 
-- [ ] **Imagen — Text-to-Image Diffusion Models**  
-      Saharia et al., 2022  
-      https://arxiv.org/abs/2205.11487
-
+### 2022
 - [ ] **Latent Diffusion Models (LDM) — Stable Diffusion**  
       Rombach et al., 2022  
       https://arxiv.org/abs/2112.10752
+
+- [ ] **Imagen — Text-to-Image Diffusion Models**  
+      Saharia et al., 2022  
+      https://arxiv.org/abs/2205.11487
 
 ---
 
@@ -723,6 +807,7 @@ This file includes ALL GAN-related papers from your list — foundational GANs, 
 
 ## 🔥 Foundations of GANs
 
+### 2014
 - [ ] **Generative Adversarial Networks (GAN)**  
       Goodfellow et al., 2014  
       https://arxiv.org/abs/1406.2661
@@ -735,6 +820,7 @@ This file includes ALL GAN-related papers from your list — foundational GANs, 
 
 ## 🧱 Convolutional & Representation Learning GANs
 
+### 2016
 - [ ] **DCGAN — Deep Convolutional GANs**  
       Radford et al., 2016  
       https://arxiv.org/abs/1511.06434
@@ -747,6 +833,7 @@ This file includes ALL GAN-related papers from your list — foundational GANs, 
 
 ## 🎨 Image-to-Image Translation
 
+### 2017
 - [ ] **Pix2Pix — Image-to-Image Translation with cGANs**  
       Isola et al., 2017  
       https://arxiv.org/abs/1611.07004
@@ -755,6 +842,7 @@ This file includes ALL GAN-related papers from your list — foundational GANs, 
       Zhu et al., 2017  
       https://arxiv.org/abs/1703.10593
 
+### 2018
 - [ ] **StarGAN — Multi-Domain Image-to-Image Translation**  
       Choi et al., 2018  
       https://arxiv.org/abs/1711.09020
@@ -763,13 +851,15 @@ This file includes ALL GAN-related papers from your list — foundational GANs, 
 
 ## 📈 Stability & Regularization in GAN Training
 
-- [ ] **Spectral Normalization for GANs**  
-      Miyato et al., 2018  
-      https://arxiv.org/abs/1802.05957
-
+### 2017
 - [ ] **TTUR — Two Time-Scale Update Rule for GAN Convergence**  
       Heusel et al., 2017  
       https://arxiv.org/abs/1706.08500
+
+### 2018
+- [ ] **Spectral Normalization for GANs**  
+      Miyato et al., 2018  
+      https://arxiv.org/abs/1802.05957
 
 - [ ] **Projection Discriminator (for Conditional GANs)**  
       Miyato & Koyama, 2018  
@@ -779,10 +869,12 @@ This file includes ALL GAN-related papers from your list — foundational GANs, 
 
 ## 🧬 Large-Scale & High-Fidelity GANs
 
+### 2018
 - [ ] **Progressive Growing of GANs**  
       Karras et al., 2018  
       https://arxiv.org/abs/1710.10196
 
+### 2019
 - [ ] **BigGAN — Large Scale GAN Training**  
       Brock et al., 2019  
       https://arxiv.org/abs/1809.11096
@@ -791,14 +883,17 @@ This file includes ALL GAN-related papers from your list — foundational GANs, 
 
 ## 👑 StyleGAN Family
 
+### 2019
 - [ ] **StyleGAN — A Style-Based Generator Architecture**  
       Karras et al., 2019  
       https://arxiv.org/abs/1812.04948
 
+### 2020
 - [ ] **StyleGAN2 — Improved Techniques for Image Quality**  
       Karras et al., 2020  
       https://arxiv.org/abs/1912.04958
 
+### 2021
 - [ ] **StyleGAN3 — Alias-Free GANs**  
       Karras et al., 2021  
       https://arxiv.org/abs/2106.12423
@@ -836,17 +931,19 @@ This file includes ALL LLM papers you listed — GPT family, PaLM, Chinchilla, L
 
 ## 🧠 Autoregressive Transformer Language Models
 
+### 2020
 - [ ] **GPT-3 — Language Models Are Few-Shot Learners**  
       Brown et al., 2020  
       https://arxiv.org/abs/2005.14165
 
-- [ ] **Jurassic-1 — At-Scale Autoregressive Language Models**  
-      Dai et al., 2022  
-      https://arxiv.org/abs/2107.02053 (closest public version; original model paper partially released)
-
+### 2022
 - [ ] **Megatron-Turing NLG (530B)**  
       Smith et al., 2022  
       https://arxiv.org/abs/2201.11990
+
+- [ ] **Jurassic-1 — At-Scale Autoregressive Language Models**  
+      Dai et al., 2022  
+      https://arxiv.org/abs/2107.02053 (closest public version; original model paper partially released)
 
 - [ ] **GLM-130B — General Language Model**  
       Zeng et al., 2022  
@@ -856,6 +953,7 @@ This file includes ALL LLM papers you listed — GPT family, PaLM, Chinchilla, L
 
 ## 🏗️ Scaling Laws & Compute-Optimal Training
 
+### 2022
 - [ ] **Chinchilla — Training Compute-Optimal Large Language Models**  
       Hoffmann et al., 2022  
       https://arxiv.org/abs/2203.15556
@@ -864,6 +962,7 @@ This file includes ALL LLM papers you listed — GPT family, PaLM, Chinchilla, L
 
 ## 🧬 Open-Source Foundation Models
 
+### 2023
 - [ ] **LLaMA — Open and Efficient LLMs**  
       Touvron et al., 2023  
       https://arxiv.org/abs/2302.13971
@@ -872,10 +971,12 @@ This file includes ALL LLM papers you listed — GPT family, PaLM, Chinchilla, L
 
 ## 🧩 Instruction Tuning, Task Generalization & Mixture Objectives
 
+### 2021
 - [ ] **FLAN — Fine-Tuned Language Models Are Zero-Shot Learners**  
       Wei et al., 2021  
       https://arxiv.org/abs/2109.01652
 
+### 2022
 - [ ] **UL2 — Unifying Language Learning Paradigms**  
       Tay et al., 2022  
       https://arxiv.org/abs/2205.05131
@@ -884,6 +985,7 @@ This file includes ALL LLM papers you listed — GPT family, PaLM, Chinchilla, L
 
 ## 🌍 Massive Multilingual & Pathways-Based Models
 
+### 2022
 - [ ] **PaLM — Scaling Language Modeling with Pathways (540B)**  
       Chowdhery et al., 2022  
       https://arxiv.org/abs/2204.02311
@@ -892,6 +994,7 @@ This file includes ALL LLM papers you listed — GPT family, PaLM, Chinchilla, L
 
 ## 🧪 Domain-Specialized LLMs
 
+### 2022
 - [ ] **Galactica — Large Language Model for Science**  
       Taylor et al., 2022  
       https://arxiv.org/abs/2211.09085
@@ -900,6 +1003,7 @@ This file includes ALL LLM papers you listed — GPT family, PaLM, Chinchilla, L
 
 ## 🤖 Open Community Models
 
+### 2023
 - [ ] **StableLM — Stability AI Open LLMs**  
       Stability AI, 2023  
       https://github.com/Stability-AI/StableLM
@@ -933,18 +1037,20 @@ This file includes ALL vision–language papers from your list — CLIP to ALIGN
 
 ## 🔗 Contrastive Image–Text Representation Learning
 
-- [ ] **CLIP — Learning Transferable Visual Models from Natural Language Supervision**  
-      Radford et al., 2021  
-      https://arxiv.org/abs/2103.00020
-
+### 2021
 - [ ] **ALIGN — Scaling Up Visual and Language Representation Learning**  
       Jia et al., 2021  
       https://arxiv.org/abs/2102.05918
+
+- [ ] **CLIP — Learning Transferable Visual Models from Natural Language Supervision**  
+      Radford et al., 2021  
+      https://arxiv.org/abs/2103.00020
 
 ---
 
 ## 🧠 Multimodal Transformer Architectures
 
+### 2019
 - [ ] **ViLBERT — Pretraining Task-Agnostic Vision-and-Language Representations**  
       Lu et al., 2019  
       https://arxiv.org/abs/1908.02265
