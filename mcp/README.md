@@ -2,7 +2,10 @@
 
 > **Turn ANY MCP server into a Reinforcement Learning environment**
 
-MCP-Gymnasium creates a universal adapter that turns any [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server into a standard [Gymnasium](https://gymnasium.farama.org/) environment, enabling you to run RL algorithms on it.
+MCP-Gymnasium creates a universal adapter that turns any [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server into a standard [Gymnasium](https://gymnasium.farama.org/) environment, enabling you to:
+- Train traditional RL algorithms (PPO, DQN, A2C)
+- Build autonomous LLM-based agents
+- Use any MCP server as an RL training ground
 
 ## 🎯 What is This?
 
@@ -10,43 +13,53 @@ This project implements a bridge between:
 - **MCP (Model Context Protocol)**: A standard for LLM-tool interaction
 - **Gymnasium**: The standard RL environment interface (successor to OpenAI Gym)
 
-**Result**: Any MCP server (file systems, APIs, databases, web search, etc.) can be used as a training ground for autonomous agents!
+**Result**: Any MCP server (file systems, APIs, databases, web search, etc.) can be used as a training ground for autonomous agents OR traditional RL algorithms!
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────────┐
-│  Your RL Agent  │  (LLM-based or traditional RL)
-│   (Gemini/Groq) │
-└────────┬────────┘
-         │
-         ├─── Observations (tool results)
-         └─── Actions (tool calls as JSON)
-         │
-┌────────▼────────┐
-│   MCPEnv        │  Universal Gym Adapter
-│  (mcp_gym.py)   │
-└────────┬────────┘
-         │
-         ├─── list_tools()
-         ├─── call_tool(name, args)
-         │
-┌────────▼────────┐
-│   MCP Server    │  (ANY server: search, files, APIs...)
-│ (ddg_server.py) │
-└─────────────────┘
+┌─────────────────────────────────┐
+│  RL Algorithms                  │
+│  • PPO, DQN, A2C (traditional)  │
+│  • LLM-based agents (Gemini/Groq)│
+└──────────────┬──────────────────┘
+               │
+     ┌─────────┴──────────┐
+     │                    │
+     │  Standard Gym API  │
+     │  • reset()         │
+     │  • step(action)    │
+     │  • close()         │
+     │                    │
+┌────▼────────────────────▼───┐
+│   MCPEnv                    │  Universal Gym Adapter
+│  (mcp_gym.py)               │
+└──────────────┬──────────────┘
+               │
+               ├─── list_tools()
+               ├─── call_tool(name, args)
+               │
+┌──────────────▼──────────────┐
+│   MCP Server                │  (ANY server: search, files, APIs...)
+│ (ddg_server.py)             │
+└─────────────────────────────┘
 ```
 
 ## 📁 Project Structure
 
 ```
 mcp/
-├── mcp_gym.py          # Universal Gym adapter (MCPEnv class)
-├── ddg_server.py       # Example: DuckDuckGo search + file saving
-├── search_agent.py     # Example: Autonomous LLM agent
-├── rewards.py          # Reward functions (keyword & LLM-based)
-├── .env               # API keys
-└── README.md          # This file
+├── mcp_gym.py              # Universal Gym adapter (MCPEnv class)
+├── ddg_server.py           # Example: DuckDuckGo search + file saving
+├── search_agent.py         # Example: Autonomous LLM agent
+├── rewards.py              # Reward functions (keyword & LLM-based)
+├── train_rl_agent.py       # 🆕 Train traditional RL algorithms (PPO/DQN/A2C)
+├── demo_rl_setup.py        # 🆕 Quick RL environment demo
+├── .env                    # API keys
+├── README.md               # This file
+├── RL_TRAINING_GUIDE.md    # 🆕 Complete guide for training RL agents
+├── TUTORIAL.md             # Step-by-step tutorial
+└── QUICK_REFERENCE.md      # Command cheat sheet
 ```
 
 ## 🚀 Quick Start
@@ -169,6 +182,69 @@ critic = LLMReward(
 ```
 
 The LLM critic evaluates if the observation truly satisfies the mission requirements.
+
+## 🤖 Training Traditional RL Agents
+
+**NEW**: You can now train traditional RL algorithms (PPO, DQN, A2C) on your MCP environments!
+
+### Quick Start with RL Training
+
+```bash
+# 1. Install RL dependencies
+pip install stable-baselines3[extra] torch tensorboard
+
+# 2. Quick demo (30 seconds)
+python demo_rl_setup.py
+
+# 3. Train a PPO agent (10-30 minutes)
+python train_rl_agent.py --algorithm ppo --steps 50000 --mission simple
+
+# 4. Monitor training
+tensorboard --logdir ./logs/tensorboard
+
+# 5. Test trained agent
+python train_rl_agent.py --test ./models/ppo_best/best_model.zip
+```
+
+### Supported RL Algorithms
+
+- **PPO** (Proximal Policy Optimization): Best general-purpose algorithm
+- **DQN** (Deep Q-Network): Good for discrete action spaces
+- **A2C** (Advantage Actor-Critic): Faster but less stable
+
+### How It Works
+
+The `DiscreteActionMCPEnv` wrapper converts MCP environments to be compatible with traditional RL:
+
+```python
+# BEFORE: MCP format (dict actions, variable observations)
+action = {"tool_name": "web_search", "arguments": {"query": "Bitcoin"}}
+observation = {"tools": [...], "history": [...]}
+
+# AFTER: RL format (integer actions, fixed-size vectors)
+action = 0  # Maps to web_search with "Bitcoin" query
+observation = [1.0, 0.0, 1.0, 1.0, ...]  # Fixed-size vector
+```
+
+### Training Examples
+
+```bash
+# Train PPO for simple mission (keyword rewards)
+python train_rl_agent.py --algorithm ppo --steps 50000 --mission simple
+
+# Train DQN for complex mission (LLM rewards)
+python train_rl_agent.py --algorithm dqn --steps 100000 --mission complex
+
+# Train A2C (faster but less stable)
+python train_rl_agent.py --algorithm a2c --steps 50000 --mission simple
+```
+
+**📚 See [RL_TRAINING_GUIDE.md](RL_TRAINING_GUIDE.md) for complete details on:**
+- Hyperparameter tuning
+- Custom action spaces
+- Training monitoring with TensorBoard
+- Troubleshooting guides
+- Advanced configurations
 
 ## 🎯 Example Missions
 
