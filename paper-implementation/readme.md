@@ -1065,5 +1065,4 @@ This file contains all the Vision–Language papers you listed:
 ✔ ALIGN  
 ✔ ViLBERT  
 
-Nothing missing.
 
