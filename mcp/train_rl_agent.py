@@ -305,7 +305,18 @@ def test_trained_agent(model_path, num_episodes=5):
     env = create_training_env(server_path, mission="simple", algorithm="test")
     
     # Load trained model
-    algorithm = os.path.basename(model_path).split("_")[0]
+    # Try to extract algorithm from directory name first, then from filename
+    dir_name = os.path.basename(os.path.dirname(model_path))
+    if any(alg in dir_name.lower() for alg in ["ppo", "dqn", "a2c"]):
+        # Extract from directory name (e.g., "ppo_best" -> "ppo")
+        for alg in ["ppo", "dqn", "a2c"]:
+            if alg in dir_name.lower():
+                algorithm = alg
+                break
+    else:
+        # Fall back to extracting from filename
+        algorithm = os.path.basename(model_path).split("_")[0]
+    
     if algorithm.lower() == "ppo":
         model = PPO.load(model_path)
     elif algorithm.lower() == "dqn":
